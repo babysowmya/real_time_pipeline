@@ -1,21 +1,22 @@
-CREATE TABLE page_view_counts (
-    window_start TIMESTAMP NOT NULL,
-    window_end TIMESTAMP NOT NULL,
-    page_url TEXT NOT NULL,
-    view_count BIGINT,
-    PRIMARY KEY (window_start, page_url)
+CREATE TABLE IF NOT EXISTS page_view_counts (
+    window_start TIMESTAMP,
+    window_end TIMESTAMP,
+    page_id TEXT,
+    view_count INT,
+    PRIMARY KEY (window_start, window_end, page_id)
 );
 
-CREATE TABLE active_users (
-    window_start TIMESTAMP NOT NULL,
-    window_end TIMESTAMP NOT NULL,
-    active_user_count BIGINT,
-    PRIMARY KEY (window_start)
+CREATE TABLE IF NOT EXISTS active_users (
+    window_start TIMESTAMP,
+    window_end TIMESTAMP,
+    active_users INT,
+    PRIMARY KEY (window_start, window_end)
 );
 
-CREATE TABLE user_sessions (
-    user_id TEXT PRIMARY KEY,
-    session_start_time TIMESTAMP,
-    session_end_time TIMESTAMP,
-    session_duration_seconds BIGINT
+CREATE TABLE IF NOT EXISTS user_sessions (
+    user_id TEXT,
+    session_start TIMESTAMP,
+    session_end TIMESTAMP,
+    duration INT,
+    PRIMARY KEY (user_id, session_start)
 );

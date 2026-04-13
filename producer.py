@@ -5,13 +5,13 @@ from datetime import datetime, timedelta
 from kafka import KafkaProducer
 
 producer = KafkaProducer(
-    bootstrap_servers='localhost:29092',
+    bootstrap_servers="localhost:9092",
     value_serializer=lambda v: json.dumps(v).encode('utf-8')
 )
 
 pages = ['/home', '/about', '/products', '/contact']
 users = [f'user_{i}' for i in range(1, 6)]
-event_types = ['page_view', 'click', 'session_start', 'session_end']
+event_types = ['page_view', 'page_view', 'page_view', 'click']
 
 while True:
     event = {

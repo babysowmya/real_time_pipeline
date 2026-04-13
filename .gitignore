@@ -1,0 +1,67 @@
+# ========================
+# Python
+# ========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.pkl
+*.log
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# ========================
+# Spark / Hadoop / Streaming
+# ========================
+checkpoint/
+spark-warehouse/
+metastore_db/
+derby.log
+tmp/
+*.crc
+
+# Streaming output folders
+*.checkpoint
+*.parquet
+
+# ========================
+# Jupyter Notebook (if used)
+# ========================
+.ipynb_checkpoints/
+
+# ========================
+# Docker
+# ========================
+*.pid
+
+# ========================
+# Environment variables (IMPORTANT)
+# ========================
+.env
+
+# ========================
+# OS Files
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# IDEs
+# ========================
+.vscode/
+.idea/
+
+# ========================
+# Logs
+# ========================
+logs/
+*.out
+
+# ========================
+# Git
+# ========================
+.gitignore.swp
